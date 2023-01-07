@@ -4,6 +4,7 @@ table{
     position: absolute;
     border-collapse: collapse;
     background-color: rgba(255, 255, 255, 0.574);
+    font-size: 12px;
 }
 tr{
     border-right: 1px solid rgb(0, 179, 255);
@@ -18,4 +19,38 @@ td{
     border-bottom: 1px solid rgb(0, 179, 255);
     padding: 5px;
     text-align: center;
+    color: rgb(33, 52, 61);
+}
+.loaderx{
+    margin: auto;
+    color: white;
+    padding: 5px;
+    width: 10rem;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.866);
+    position: absolute;
+    top: 12rem;
+    left: 22rem;
+}
+.loadery{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.127);
+}
+.loader{
+    margin: 2px auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    animation: rotatex 1s infinite linear;
+}
+@keyframes rotatex {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }

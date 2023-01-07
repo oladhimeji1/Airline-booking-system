@@ -85,3 +85,18 @@ body{
         transform: rotate(360deg);
     }
 }
+.msgbox{
+    background-color: rgba(255, 0, 0, 0.854);
+    width: 13rem;
+    height: 50px;
+    color: white;
+    text-align: center;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center;/ */
+    /* align-content: center; */
+    position: absolute;
+    top:  0;
+    left: 34rem;
+    display: none;
+}

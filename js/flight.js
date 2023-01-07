@@ -13,6 +13,13 @@ var phonex = document.getElementById('phonex');
 var ftypex = document.getElementById('ftypex');
 var msg = document.getElementById('msg');
 
+var username;
+
+$(document).ready(()=>{
+    username = sessionStorage.getItem('username');
+    // loadRecord();
+})
+
 $('#btn-next').click(()=>{
     startdate = $('#startdate').val();
     enddate = $('#enddate').val();
@@ -66,6 +73,7 @@ $('#submitx').click(()=>{
     $('.loadery'). show(500)
 
     const _data = {
+        username: username,
         fullname: fullname,
         pid: pid,
         startdate: startdate,
@@ -78,18 +86,19 @@ $('#submitx').click(()=>{
         ftype: ftype,
         reason: reason
     }
-
-    fetch('url', {
+    // console.log(_data)
+    fetch('http://localhost:3000/add-user', {
         method: 'POST',
         body: JSON.stringify(_data),
         headers: {'Content-type': 'application/json; charset=utf-8'}
     })
-    .then(response => response.json())
+    // .then(response => response.json())
+    .then(response => response.text())
     .then(datax => console.log(datax))
     .catch(err => console.log(err));
 
     setTimeout(()=>{
-        $('.loadery'). show(500)
+        $('.loadery'). hide(500)
     }, 1000);
 
     $('#contprev').hide(500);

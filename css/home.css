@@ -68,8 +68,8 @@ ul{
     position: absolute;
     top: 70px;
     left: 13rem;
-    width: 82vw;
-    height: 85.8vh;
+    width: 83.5vw;
+    height: 87vh;
     padding-top: 5px;
     padding-bottom: 0;
     padding-left: 5px;
@@ -106,11 +106,11 @@ ul{
 .in{
     width: 15.8rem;
 }
-.xxx{
+/* .xxx{
     position: absolute;
     left: 0;
     top: 0;
-}
+} */
 .loaderx{
     margin: auto;
     color: white;
