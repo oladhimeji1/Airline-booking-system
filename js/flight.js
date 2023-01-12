@@ -1,5 +1,5 @@
-var startdate, enddate, city, country, destination, ftype;
-var fullname, haddress, pid, phone, reason;
+var Depdate, Retdate, cityname, Country, Destination, ftype, identification;
+var fullname, HomeAddress, PassportId, phone, reason, Means_of_id
 
 var ful = document.getElementById('ful');
 var idp = document.getElementById('idp');
@@ -12,6 +12,8 @@ var addressx = document.getElementById('addressx');
 var phonex = document.getElementById('phonex');
 var ftypex = document.getElementById('ftypex');
 var msg = document.getElementById('msg');
+var means = document.getElementById('means');
+var identification = document.getElementById('identi');
 
 var username;
 
@@ -21,12 +23,13 @@ $(document).ready(()=>{
 })
 
 $('#btn-next').click(()=>{
-    startdate = $('#startdate').val();
-    enddate = $('#enddate').val();
-    city = $('#city').val();
-    country = $('#country').val();
-    destination = $('#destination').val();
+    Depdate = $('#Depdate').val();
+    Retdate = $('#Retdate').val();
+    cityname = $('#cityname').val();
+    Country = $('#Country').val();
+    Destination = $('#Destination').val();
     ftype = $('#ftype').val();
+    identification = $('#identification').val();
     
     $('#flight').hide(500, ()=>{
         $('#personal').show(500)
@@ -41,26 +44,29 @@ $('#btn-prev').click(()=>{
 
 $('#btn-submit').click(()=>{
     fullname = $('#fullname').val();
-    haddress = $('#haddress').val();
-    pid = $('#pid').val();
+    HomeAddress = $('#HomeAddress').val();
+    PassportId = $('#PassportId').val();
     phone = $('#phone').val();
     reason = $('#reason').val();
+    Means_of_id = $('#Means_of_id').val();
 
     $('#personal').hide(500, ()=>{
         $('#contprev').show(500)
     })
 
     ful.innerHTML = fullname;
-    idp.innerHTML = pid;
-    start.innerHTML = startdate;
-    end.innerHTML = enddate;
-    cityx.innerHTML = city;
-    countryx.innerHTML = country;
-    daddress.innerHTML = destination;
-    addressx.innerHTML = haddress;
+    idp.innerHTML = PassportId;
+    start.innerHTML = Depdate;
+    end.innerHTML = Retdate;
+    cityx.innerHTML = cityname;
+    countryx.innerHTML = Country;
+    daddress.innerHTML = Destination;
+    addressx.innerHTML = HomeAddress;
     phonex.innerHTML = phone;
     ftypex.innerHTML = ftype;
     msg.innerHTML = reason;
+    identi.innerHTML = identification;
+    means.innerHTML = Means_of_id;
 
 });
 
@@ -73,20 +79,22 @@ $('#submitx').click(()=>{
     $('.loadery'). show(500)
 
     const _data = {
-        username: username,
-        fullname: fullname,
-        pid: pid,
-        startdate: startdate,
-        enddate: enddate,
-        city: city,
-        country: country,
-        destination: destination,
-        haddress: haddress,
-        phone: phone,
-        ftype: ftype,
-        reason: reason
+        Username: username,
+        Fullname: fullname,
+        PassportId: PassportId,
+        Depdate: Depdate,
+        Retdate: Retdate,
+        City: cityname,
+        Country: Country,
+        Destination: Destination,
+        HomeAddress: HomeAddress,
+        Phone: phone,
+        FlightType: ftype,
+        Reason: reason,
+        Identification: identification,
+        Means_of_id: Means_of_id
     }
-    // console.log(_data)
+    console.log(_data)
     fetch('http://localhost:3000/add-user', {
         method: 'POST',
         body: JSON.stringify(_data),
@@ -94,7 +102,7 @@ $('#submitx').click(()=>{
     })
     // .then(response => response.json())
     .then(response => response.text())
-    .then(datax => console.log(datax))
+    // .then(datax => console.log(datax))
     .catch(err => console.log(err));
 
     setTimeout(()=>{

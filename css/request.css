@@ -1,0 +1,101 @@
+.content-prev{
+    position: absolute;
+    left: 20rem;
+    top: -15px;
+    background-color: white;
+    height: 90hv;
+    width: 20rem;
+    margin: 10px auto;
+    padding:5px 20px 0 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 99999;
+    font-size: 12px;
+}
+.personal{
+    display: none;
+}
+.btn-times{
+    position: absolute;
+    left: 20rem;
+    top: 20px;
+    font-size: 30px;
+    color: red;
+    height: 1rem;
+}
+.btn-times:hover{
+    color: rgb(157, 3, 3);
+    cursor: pointer;
+}
+small{
+    color: red;
+    text-align: center;
+    font-size: 12px;
+}
+.btn{
+    padding: 7px;
+    border-radius: 5px;
+    border: 2px solid rgb(0, 179, 255);
+    background-color: rgb(0, 179, 255);
+    color: white;
+    margin: 18px auto;
+    width: 9rem;
+    position: relative;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: rgb(3, 77, 108);
+    border: 2px solid rgb(3, 77, 108);
+    color: white;
+}
+.btn:active{
+    background-color: crimson;
+    border: 2px solid crimson;
+    color: white;
+}
+.item:hover{
+    cursor: pointer;
+    background-color: red;
+}
+span{
+   display: flex;
+   justify-content: space-around; 
+}
+.btv{
+    padding: 1px;
+    cursor: pointer;
+}
+.btv:hover{
+    background-color: rgba(128, 128, 128, 0.139);
+}
+.a{
+    color: green;
+}
+.b{
+    color: red;
+}
+.b:hover{
+    color: white;
+}
+.details{
+    display: flex;
+    justify-content: space-around;
+    width: 15rem;
+    background-color: rgb(74, 63, 63);
+    position: absolute;
+    top: 7rem;
+    left: 24rem;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 9999999999999;
+    display: none;
+}
+.btnx{
+    background-color: red;
+    border: 1px solid red;
+}
+h2{
+    color: white;
+    text-align: center;
+}

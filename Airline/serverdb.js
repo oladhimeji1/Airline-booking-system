@@ -9,10 +9,7 @@ app.use(cors());
 app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json())
 
-//listen for request
-app.listen(3000, () =>{
-  console.log('Running on port 3000')
-});
+
 
 app.get('/', (req, res) => {
     
@@ -37,14 +34,45 @@ var con = mysql.createConnection({
     
   });
 
-        // Load user record
+        // Load a user record
 app.post('/loadrec', (req, res) => {
   const {username} = req.body;
   
-  const loadrec = `Select * From userdata Where Username = '${username}' ORDER BY sno desc`
+  const loadrec = `Select * From userdata Where Username = '${username}' ORDER BY Sno desc`
   con.query(loadrec, (err, data) => {
     if(err){
       return res.send(err)
+      console.log(err)
+    }else if(data){
+      // console.log(data)
+      res.send(data)
+    }
+  });
+});
+
+        // Load all user record
+app.get('/loadall', (req, res) => {
+  
+  const loadrec = `Select * From userdata ORDER BY Sno DESC`
+  con.query(loadrec, (err, data) => {
+    if(err){
+      return res.send(err)
+      console.log(err)
+    }else if(data){
+      // console.log(data)
+      res.send(data)
+    }
+  });
+});
+
+        // Load all Requests
+app.get('/requests', (req, res) => {
+  
+  const loadrec = `Select Sno, Username, xFrom, xTo, FlightTime, Flight_no, Status From userdata ORDER BY Sno DESC`
+  con.query(loadrec, (err, data) => {
+    if(err){
+      return res.send(err)
+      console.log(err)
     }else if(data){
       // console.log(data)
       res.send(data)
@@ -56,7 +84,7 @@ app.post('/loadrec', (req, res) => {
 app.post('/login', (req, res) => {
   const {username, password} = req.body;
   console.log(username, password)
-  const enterName = `Select * From userdata Where Username = '${username}' AND Password = '${password}'`
+  const enterName = `Select * From login Where Username = '${username}' AND Password = '${password}'`
   con.query(enterName, (err, data) => {
       if(err){
         return res.send(err)
@@ -68,13 +96,33 @@ app.post('/login', (req, res) => {
   });
 });
 
-      // Register a user into the database
+      // Book a Flight, sending the info to the database
 app.post('/add-user', (req, res) => {
-  const {fullname, username, phone, startdate, enddate, ftype, reason, city, country, destination, haddress} = req.body;
-  // console.log(firstname)
+  const {username, from, to, departure, traveltype, travellers, arrival, time} = req.body;
+ const enterName = 
+  `INSERT INTO userdata(Username, xFrom, xTo, Depdate, Retdate, FlightTime, FlightType, NoOfFlight) 
+  VALUES('${username}', '${from}', '${to}', '${departure}', '${arrival}', '${time}', '${traveltype}', '${travellers}')`;
+  con.query(enterName, err => {
+      if(err){
+          return res.send(err)
+          console.log(err)
+      }else{
+          res.send('Flight booked successfully!')
+      }
+  });
+});
+
+
+// Username Password Fullname UserType
+
+
+      // Registering a user
+app.post('/reg-user', (req, res) => {
+  const {fullname, username, psw} = req.body;
+  
   const enterName = 
-  `INSERT INTO userdata(Username, Depdate, Retdate, FlightType, Reason, Fullname, City, Country, Destination,HomeAddress, Phone)
-   VALUES('${username}', '${startdate}', "${enddate}", "${ftype}", '${reason}', "${fullname}", "${city}", "${country}", "${destination}", "${haddress}", "${phone}")`
+  `INSERT INTO login(Username, Password, Fullname)
+    VALUES('${username}', '${psw}', '${fullname}')`
   con.query(enterName, err => {
       if(err){
           return res.send(err)
@@ -83,6 +131,45 @@ app.post('/add-user', (req, res) => {
       }
   });
 })
+
+      // Approve Ticket
+app.post('/approve', (req, res) => {
+  const {Sno} = req.body;
+  
+  const enterName = 
+  `UPDATE userdata SET Status = 'Approved' WHERE Sno = '${Sno}'`
+  con.query(enterName, err => {
+      if(err){
+          return res.send(err)
+      }else{
+          res.send('Approved successfully!')
+      }
+  });
+})
+
+      // Decline Ticket
+app.post('/decline', (req, res) => {
+  const {Sno} = req.body;
+  
+  const enterName = 
+  `UPDATE userdata SET Status = 'Declined' WHERE Sno = '${Sno}'`
+  con.query(enterName, err => {
+      if(err){
+          return res.send(err)
+      }else{
+          res.send('Declined successfully!')
+      }
+  });
+})
+
+//  Username, PassportId, Fullname, Means_of_id, Depdate, Retdate, FlightDate, FlightTime,
+// Phone, HomeAddress, City, Country, Destination, FlightType, Flight_no, Status, NoOfFlight
+
+
+//listen for request
+app.listen(3000, () =>{
+  console.log('Running on port 3000')
+});
 
 // app.get('/register-user', (req, res) => {
 //     var all1 = req.query;

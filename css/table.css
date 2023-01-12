@@ -3,7 +3,7 @@ table{
     width: 62rem;
     position: absolute;
     border-collapse: collapse;
-    background-color: rgba(255, 255, 255, 0.574);
+    background-color: rgba(255, 255, 255, 0.861);
     font-size: 12px;
 }
 tr{
@@ -53,4 +53,8 @@ td{
     to{
         transform: rotate(360deg);
     }
+}
+h2{
+    color: white;
+    text-align: center;
 }

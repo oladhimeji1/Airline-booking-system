@@ -7,14 +7,14 @@ $(document).ready(()=>{
 })
 
 $('#reg').click(()=>{
+    document.getElementById('frame').src = '../pages/overview.html';
+    document.getElementById('reg').style.backgroundColor = 'white';
+    document.getElementById('reg').style.color = '#017DBA';
     document.getElementById('viewrec').style.backgroundColor = '#017DBA';
     document.getElementById('viewrec').style.color = 'white';
-    if(confirm('Do you want to book a flight?')){
-        window.location.assign('../index.html')
-    }
 });
 $('#viewrec').click(()=>{
-    document.getElementById('frame').src = '../pages/table.html'
+    document.getElementById('frame').src = '../pages/request.html'
     document.getElementById('viewrec').style.backgroundColor = 'white';
     document.getElementById('viewrec').style.color = '#017DBA';
     document.getElementById('reg').style.backgroundColor = '#017DBA';

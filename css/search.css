@@ -1,0 +1,81 @@
+.card{
+    display: block;
+    background-color: white;
+    border-radius: 5px;
+    width: 90%;
+    margin: 20px auto;
+    /* height: 70px; */
+}
+.card div{
+    display: flex;
+    justify-content: space-around;
+    color: #017DBA;
+}
+.card div p{
+    font-size: 12px;
+}
+.btn{
+    font-size: 10px;
+    height: 25px;
+    background-color: #017DBA;
+    border: #017DBA;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+.btn:active{
+    background-color:crimson;
+    border: crimson;
+}
+.condition h3{
+    text-align: center;
+    color: #017DBA;
+}
+.loaderx{
+    margin: auto;
+    color: white;
+    padding: 5px;
+    width: 10rem;
+    border-radius: 5px;
+    background-color: #017DBA;
+    position: relative;
+    top: 7rem;
+    left: 1rem;
+}
+.loadery{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    display: none;
+    height: 130vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.476);
+}
+.loader{
+    margin: 2px auto;
+    border: 2px solid #ffff;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    animation: rotatex 1s infinite linear;
+}
+@keyframes rotatex {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.details{
+    width: 15rem;
+    background-color: rgb(74, 63, 63);
+    position: relative;
+    top: 7rem;
+    left: 24rem;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+}

@@ -19,55 +19,70 @@ $('#btny').click(()=>{
     .then(response => response.json())
     // .then(response => response.text())
     .then(data => {
-        console.log(data)
+        // console.log(data)
+        // console.log(data[0].UserType)
         if(data == ![]){
             $('.msgbox').slideDown(500);
             $('.msgbox').delay(3000);
             $('.msgbox').slideUp(500);
-        }else{
+        }else if(data[0].UserType == 'Admin'){
             $('.loadery').show(500)
             $('.loadery').delay(2000)
             $('.loadery').hide(500, ()=>{
-                window.location.assign('./pages/home.html')
+                window.location.assign('admin.html')
+            })
+        }else if(data[0].UserType == 'user'){
+            $('.loadery').show(500)
+            $('.loadery').delay(2000)
+            $('.loadery').hide(500, ()=>{
+                window.location.assign('home.html')
             })
         }
     })
     .catch(err => console.log(err));
-
+    
     
 });
 
 $('#btnx').click(()=>{
     fullname = $('#fullname').val();
     username = $('#username').val();
-    phone = $('#phone').val();
-    email = $('#email').val();
     psw = $('#password').val();
     rpsw = $('#passwordx').val();
 
     if(psw !== rpsw){
-        $('.msgbox').slideDown(500);
+        $('.msgbox').slideDown(200);
         msgx.innerHTML = 'Please make sure the passwords match';
         $('.msgbox').delay(3000);
         $('.msgbox').slideUp(500);
     } else{
-        
-        const _data = { fullname: fullname, username: username,
-        phone: phone,
-        email: email,
-        psw: psw,
-        rpsw: rpsw
+        $('.loadery').fadeIn(300);
+        $('.loadery').delay(1000);
+
+        const _data = { 
+            fullname: fullname, 
+            username: username,
+            psw: psw
         }
         console.log(_data)
-        fetch('http://localhost:3000/add-user', {
+        fetch('http://localhost:3000/reg-user', {
             method: 'POST',
             body: JSON.stringify(_data),
             headers: {'Content-type': 'application/json; charset=utf-8'}
         })
         // .then(response => response.json())
-        .then(datax => 
+        .then(datax => {
             console.log(datax)
-        )
+            $('.loadery').fadeOut(300);
+            // location.reload(true);
+            $('.msgbox').slideDown(200);
+            msgx.innerHTML = 'You have register successfully';
+            $('.msgbox').delay(3000);
+            $('.msgbox').slideUp(200, ()=>{
+                location.assign('index.html');
+            });
+            
+        })
         .catch(err => console.log(err));
 
         // setTimeout(()=>{

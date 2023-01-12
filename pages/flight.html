@@ -17,26 +17,44 @@
                 <legend>Flight details</legend>
                 <div class="inner-content">
                     <div>
-                        <label for="startdate">Departure</label><br>
-                        <input name="startdate" type="date" class="user-input" id="startdate"><br>
+                        <label for="Depdate">Departure</label><br>
+                        <input name="Depdate" type="date" class="user-input" id="Depdate"><br>
                     </div>
 
                     <div>
-                        <label for="enddate">Return</label><br>
-                        <input name="enddate" type="date" class="user-input" id="enddate"><br>
+                        <label for="Retdate">Return</label><br>
+                        <input name="Retdate" type="date" class="user-input" id="Retdate"><br>
+                    </div>
+                </div>
+
+                <div class="inner-content">
+
+                    <div>
+                        <label for="PassportId">Passport ID</label><br>
+                        <input name="PassportId" placeholder="Enter Passport ID" type="text" class="user-input" id="PassportId"><br>
+                    </div>
+
+                    <div>
+                        <label for="Means_of_id">Means of identification</label><br>
+                        <select name="Means_of_id" class="user-input" id="Means_of_id">
+                            <option value="">-- Select --</option>
+                            <option value="National ID">National ID</option>
+                            <option value="Voters card">Voters card</option>
+                            <option value="Driving lisence">Driving lisence</option>
+                        </select>
                     </div>
                 </div>
                 
                 <div class="inner-content">
                     <div>
-                        <label for="city">Departure city</label><br>
-                        <input name="city" type="text" placeholder="Enter city name" class="user-input" id="city"><br>
+                        <label for="Destination">Departure city</label><br>
+                        <input name="Destination" type="text" placeholder="Enter Destination address" class="user-input" id="Destination"><br>
                     </div>
 
                     <div>
-                        <label for="country">Departure country</label><br>
+                        <label for="Country">Departure Country</label><br>
 
-                        <select name="country" class="user-input" id="country">
+                        <select name="Country" class="user-input" id="Country">
                             <option value="">-- Select --</option>
                             <option value="Canada">Canada</option>
                             <option value="USA">USA</option>
@@ -46,9 +64,10 @@
                 </div>
                 
                 <div class="inner-content">
+
                     <div>
-                        <label for="destination">Destination</label><br>
-                        <input name="destination" type="text" placeholder="Enter destination address" class="user-input" id="destination"><br>
+                        <label for="identification">Identification Number</label><br>
+                        <input name="identification" type="text" placeholder="Enter identification number" class="user-input" id="identification"><br>
                     </div>
 
                     <div>
@@ -60,7 +79,6 @@
                             <option value="Regular">Regular</option>
                         </select>
                     </div>
-
                 </div>
 
             </fieldset>
@@ -82,22 +100,25 @@
                     </div>
 
                     <div>
-                        <label for="haddress">Home Address</label><br>
-                        <input name="haddress" type="text" placeholder="Enter home address" class="user-input" id="haddress"><br>
-                    </div>
-                </div>
-                
-                <div class="inner-content">
-                    <div>
-                        <label for="pid">Passport ID</label><br>
-                        <input name="pid" type="text" placeholder="Enter passport ID" class="user-input" id="pid"><br>
-                    </div>
-
-                    <div>
                         <label for="phone">Phone</label><br>
                         <input name="phone" type="text" placeholder="Enter phone number" class="user-input" id="phone"><br>
                     </div>
                 </div>
+                
+                <div class="inner-content">
+                    
+                    <div>
+                        <label for="HomeAddress">HomeAddress</label><br>
+                        <input name="HomeAddress" type="text" placeholder="Enter Home address" class="user-input" id="HomeAddress"><br>
+                    </div>
+
+                    <div>
+                        <label for="city">City</label><br>
+                        <input name="city" type="text" placeholder="Enter your cityname" class="user-input" id="cityname"><br>
+                    </div>
+
+                </div>
+
                 
                 <div class="inner-content">
                     <div>
@@ -123,10 +144,12 @@
             <button id="btn-submit" class="btn btn-book">Book now</button>
         </div> 
 
+        
+
         <div class="content-prev" id="contprev">
             <i class="fa fa-times btn-times"></i>
             <p><b>Fullname:</b> <span id="ful"></span></p>
-            <p><b>Pass ID:</b> <span id="idp"></span></p>
+            <p><b>Passport ID:</b> <span id="idp"></span></p>
             <p><b>Departure date:</b> <span id="start"></span></p>
             <p><b>Return date:</b> <span id="end"></span></p>
             <p><b>Departure city:</b> <span id="cityx"></span></p>
@@ -135,6 +158,8 @@
             <p><b>Home Address:</b> <span id="addressx"></span></p>
             <p><b>Phone number:</b> <span id="phonex"></span></p>
             <p><b>Flight type:</b> <span id="ftypex"></span></p>
+            <p><b>Means of ID:</b> <span id="means"></span></p>
+            <p><b>Identification:</b> <span id="identi"></span></p>
             <p><b>Reason for trip:</b> <span id="msg"></span></p>
 
             <small>Please ensure your details are correct before proceed to submit</small>

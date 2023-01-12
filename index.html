@@ -1,41 +1,168 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MDWQZFJCR6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-MDWQZFJCR6');
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airline booking system | Login page</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Alfajr Travels - Affordable flight bookings</title>
+    <link rel="stylesheet" href="css/intex.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"/>
+    <link rel="icon" href="/images/favicon.png" />
     <script src="js/jquery.js"></script>
 </head>
-<body>
-    <div class="container">
-        <marquee style="color: white;" behavior="" direction="">Airline ticket booking system by <b>Abdulyekeen Muhammed Olamilekan</b></marquee>
-        
-        <div class="loadery">
-            <div class="loaderx">
-                <div class="loader"></div>
-            <p>Loading, pleass wait...</p>
+
+<body id="body">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">
+                <a href="/">
+                    <img src="images/logo.png" alt="Alfajr Logo" />
+                </a>
             </div>
         </div>
-        
-        <div class="msgbox">
-            <p class="msgx" id="msgx">Username or password is incorrect, please try again.</p>
+        <div class="headerCenter">
+            <ul class="headerCenterMenu hideMenu">
+                <li>
+                    <a href="#">
+                        <i class="fa-sharp fa fa-plane"></i> Flights
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-bed"></i> Hotels
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-ticket"></i> Dubai Visa
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-umbrella"></i> Tours
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        More <i class="fa fa-angle-down"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
+        <div class="header-right">
+            <i class="fa fa-sign-in menuIcon "></i> Login
+        </div>
+    </header>
 
-        <div class="content">
-            <h2>Login Page</h2>
-            <label for="username">Username</label><br>
-            <input name="username" type="text" placeholder="Enter Username" class="user-input" id="username"><br>
-            <label for="password">Password</label><br>
-            <input name="password" type="password" placeholder="Enter Password" class="user-input" id="password">
-            <br>
-            <button id="btny" class="btn">Login</button>
-            <p class="msg">Don't have an account? <a href="/signup.html">Register</a></p>
-        </div>
-        
+   
+    <!-- Flight Frame -->
+    <div class="frameContainer tabSection flight active">
+        <img src="img/aeroplane1.jpg" alt="">
     </div>
 
-    <script src="js/login.js"></script>
+    <div class="centerdiv">
+        <div class="headx">
+            <div id="roundtrip">Round trip</div>
+            <div id="oneway">One Way</div>
+            <div id="multicity">Multi-City</div>
+        </div>
+        <div class="bodyx">
+            <div class="contentx">
+                <div class="one">
+                    <span><i class="fa fa-plane"></i> From</span>
+                    <p><input type="text" id="from" class="hide-input" placeholder="Origin"></p>
+                </div>
+                <div class="two">
+                    <span><i class="fa fa-plane"></i> To</span>
+                    <p><input type="text" id="to" class="hide-input" placeholder="Destination"></p>
+                </div>
+            </div>
+            <div class="contentx">
+                <div class="one">
+                    <span><i class="fa fa-calendar"></i> Departure</span> 
+                    <p><input type="date" id="departure" class="hide-input" placeholder="10/01/2023" name="" id=""></p>
+                </div>
+                <div class="two">
+                    <span><i class="fa fa-calendar"></i> Arival</span>
+                    <p><input type="date" id="arrival" class="hide-input" placeholder="10/01/2023" name="" id=""></p>
+                </div>
+            </div>
+            <div class="contentx odd">
+                <div id="passenger">
+                    <span><i class="fa fa-user"></i> Passengers & class</span>
+                    <p id="travellers">1 Traveller, Economic</p>
+                </div>
+                
+            </div>
+            
+            <div class="contentx odd search">
+                <div>
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+        </div>
+        <section class="hidden">
+            <p>Travel Class</p>  
+            
+            <li id="economic">Economic</li>
+            <li id="premium">Premium Economic</li>
+            <li id="business">Business Class</li>
+            <li id="first">First Class</li>
+            
+            <p>Number of Travellers</p> 
+            
+            <li>Adult(13+) <input type="number" name="adult" id="adult"></li>
+            <li>Children <input type="number" name="children" id="children"></li>
+            
+        </section>
+    </div>
+    
+    <!-- iframe area -->
+    <div class="framecon">
+        <iframe id="frame" class="frame" src="./pages/search.html" frameborder="0"></iframe>
+    </div>
+    
+    <div class="footer">
+        <div class="headerx">
+            <h2>Why book with us</h2>
+        </div>
+        <div class="cardbox">
+            <div class="card">
+                <i class="fa fa-bookmark"></i>
+                <h3>Easy Booking</h3>
+                <p>We offer easy and convenient flight bookings with attractive offers.</p>
+            </div>
+            <div class="card">
+                <i class="fa fa-money"></i>
+                <h3>Lowest Price</h3>
+                <p>We ensure low rates on hotel reservation, holiday packages and on flight tickets.</p>
+            </div>
+            <div class="card">
+                <i class="fa fa-smile"></i>&#xf0a4;
+                <h3>Exciting Deals</h3>
+                <p>Enjoy exciting deals on flights, hotels, buses, car rental and tour packages.</p>
+            </div>
+            <div class="card">
+                <i class="fa fa-phone"></i>
+                <h3>24/7 Support</h3>
+                <p>Get assistance 24/7 on any kind of travel related query. We are happy to assist you.</p>
+            </div>
+        </div>
+    </div>
+
 </body>
+<script src="js/main.js"></script>
+
 </html>

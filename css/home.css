@@ -9,18 +9,18 @@ ul{
     color: white;
     display: flex;
     justify-content: space-between;
-    background-color: rgb(16, 147, 161);
+    background-color: #017DBA;
     padding: 20px 40px;
 }
 .btn{
     padding: 5px;
-    background-color: rgb(16, 147, 161);
+    background-color: #017DBA;
     color: white;
-    border: 1px solid rgb(16, 147, 161);
+    border: 1px solid #017DBA;
 }
 .btn:hover{
     background-color: rgb(255, 255, 255);
-    color: rgb(16, 147, 161);
+    color: #017DBA;
     cursor: pointer;
 }
 .school-logo{
@@ -32,12 +32,12 @@ ul{
 }
 .sidebar-item:hover{
     background-color: white;
-    color: rgb(16, 147, 161);
+    color: #017DBA;
     cursor: pointer;
 }
 .sidebar{
     display: block;
-    background-color: rgb(16, 147, 161);
+    background-color: #017DBA;
     padding: 20px 0;
     width: 13rem;
     height: 82vh;
@@ -46,7 +46,7 @@ ul{
 .sub-menue{
     display: none;
     background-color: rgb(244, 244, 244);;
-    color: rgb(16, 147, 161);
+    color: #017DBA;
 }
 .sub-menue li{
     cursor: pointer;
@@ -68,24 +68,25 @@ ul{
     position: absolute;
     top: 70px;
     left: 13rem;
-    width: 83.5vw;
-    height: 87vh;
+    width: 80.5vw;
+    height: 86.8vh;
     padding-top: 5px;
     padding-bottom: 0;
     padding-left: 5px;
     padding-right: 5px;
+    overflow: auto;
 }
 .student-rec{
     margin: 30px auto;
 }
 .student-rec, tr, th, td{
     border-collapse: collapse;
-    border: 1px solid rgb(16, 147, 161);
+    border: 1px solid #017DBA;
     padding: 15px;
-    color: rgb(16, 147, 161);
+    color: #017DBA;
 }
 .class-desc{
-    color: rgb(16, 147, 161);
+    color: #017DBA;
     padding: 0 10px 0 10px;
     text-align: center;
 }
@@ -94,14 +95,14 @@ ul{
     padding: 5px;
     outline: none;
     display: block;
-    border: 1px solid rgb(16, 147, 161);
+    border: 1px solid #017DBA;
 }
 .register-student{
     margin: 30px auto;
-    border: 1px solid rgb(16, 147, 161);
+    border: 1px solid #017DBA;
     width: 17rem;
     padding: 35px;
-    color: rgb(16, 147, 161);
+    color: #017DBA;
 }
 .in{
     width: 15.8rem;
